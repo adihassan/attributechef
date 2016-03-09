@@ -1,6 +1,16 @@
 package "apache2" do
+version '2.4'
   action :install
 end
+
+
+
+default["apache"]["version"] = "2.4"
+
+case platform
+when "centos", "rhel"
+default['apache']['version'] = "2.4"
+
 
 service "apache2" do
   action [:enable, :start]
