@@ -1,4 +1,6 @@
-node['apache']['version'] = '2.4'
+case platform
+when "centos", "rhel"
+default['apache']['version'] = "2.4"
 
 
 default["lamp"]["sites"]["example.com"] =
